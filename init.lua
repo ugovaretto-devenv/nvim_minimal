@@ -164,6 +164,6 @@ key_mapper('n', '<leader>fh', ':lua require"telescope.builtin".help_tags()<CR>')
 key_mapper('n', '<leader>fb', ':lua require"telescope.builtin".buffers()<CR>')
 -- Lualine
 require('lualine').setup()
-
+-- Color scheme
 vim.cmd[[colorscheme codedark]]
 --vim.cmd('source  $HOME/.config/nvim/coc-settings.vim')
