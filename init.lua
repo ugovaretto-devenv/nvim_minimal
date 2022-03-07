@@ -1,9 +1,8 @@
 -- Install node and do CocInstall coc-rust-analyzer
 
-
-local o = vim.o
-local bo = vim.bo
-local wo = vim.wo
+o = vim.o
+bo = vim.bo
+wo = vim.wo
 o.termguicolors = true
 o.syntax = 'on'
 o.errorbells = false
@@ -26,9 +25,9 @@ wo.number = true
 wo.relativenumber = true
 wo.signcolumn = 'yes'
 wo.wrap = false
-o.colorcolumn = '80'
-vim.cmd[[highlight ColorColumn ctermbg=0 guibg=grey]]
 vim.g.mapleader = ' '
+o.colorcolumn = '80'
+vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 
 ------------------------------------------------------------------------------
 -- Key mapping
@@ -169,4 +168,7 @@ key_mapper('n', '<leader>fb', ':lua require"telescope.builtin".buffers()<CR>')
 require('lualine').setup()
 -- Color scheme
 vim.cmd[[colorscheme codedark]]
---vim.cmd('source  $HOME/.config/nvim/coc-settings.vim')
+-- map Ctrl-n & Ctrl-p to TAB for scrolling autocompletion lists
+vim.api.nvim_set_keymap("i", "<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { noremap = true, silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { noremap = true, silent = true, expr = true })
+
