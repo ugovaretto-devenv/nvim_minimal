@@ -1,6 +1,9 @@
+-- Install node and do CocInstall coc-rust-analyzer
+
+
 local o = vim.o
 local bo = vim.bo
-wo = vim.wo
+local wo = vim.wo
 o.termguicolors = true
 o.syntax = 'on'
 o.errorbells = false
