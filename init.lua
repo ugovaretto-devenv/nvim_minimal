@@ -1,4 +1,5 @@
--- Install node and do CocInstall coc-rust-analyzer
+-- Install node and do CocInstall coc-rust-analyzer and clangd
+-- add languages to 'servers' variable
 
 o = vim.o
 bo = vim.bo
@@ -28,7 +29,7 @@ wo.wrap = false
 vim.g.mapleader = ' '
 o.colorcolumn = '80'
 vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
-
+vim.cmd[[match Error /\%>80c/]]
 ------------------------------------------------------------------------------
 -- Key mapping
 local key_mapper = function(mode, key, result)
@@ -130,7 +131,7 @@ local default_config = {
 require('lspconfig')
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer' }
+local servers = { 'rust_analyzer', 'clangd' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
   on_attach = on_attach,
