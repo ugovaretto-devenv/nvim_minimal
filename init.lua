@@ -30,6 +30,7 @@ vim.g.mapleader = ' '
 o.colorcolumn = '80'
 vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 vim.cmd[[match Error /\%>80c/]]
+vim.cmd[[tnoremap <Esc> <C-\><C-n>]]
 ------------------------------------------------------------------------------
 -- Key mapping
 local key_mapper = function(mode, key, result)
