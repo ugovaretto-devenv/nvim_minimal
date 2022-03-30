@@ -26,11 +26,13 @@ wo.number = true
 wo.relativenumber = true
 wo.signcolumn = 'yes'
 wo.wrap = false
-vim.g.mapleader = ' '
+vim.g.mapleader = ','
 o.colorcolumn = '80'
 vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 vim.cmd[[match Error /\%>80c/]]
 vim.cmd[[tnoremap <Esc> <C-\><C-n>]]
+-- close buffer without closing tab/split
+vim.cmd[[map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>]]
 ------------------------------------------------------------------------------
 -- Key mapping
 local key_mapper = function(mode, key, result)
