@@ -29,7 +29,7 @@ wo.wrap = false
 vim.g.mapleader = ','
 o.colorcolumn = '80'
 vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
-vim.cmd[[match Error /\%>80c/]]
+vim.cmd[[match Error /\%>110c/]]
 vim.cmd[[tnoremap <Esc> <C-\><C-n>]]
 -- close buffer without closing tab/split
 vim.cmd[[map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>]]
